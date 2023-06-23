@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentActivityRestaurants"
+        android:icon="@drawable/ic_restaurant"
+        android:title="Restaurants" />
+    <item
+        android:id="@+id/fragmentMap"
+        android:icon="@drawable/ic_map_t"
+        android:title="Map" />
+    <item
+        android:id="@+id/fragmentPannier"
+        android:icon="@drawable/ic_shop"
+        android:title="Order" />
+    <item
+        android:id="@+id/fragmentProfile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+
+
+</menu>

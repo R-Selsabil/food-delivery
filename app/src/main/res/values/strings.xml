@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="restaurant_name">McDonald\'s</string>
+    <string name="restaurant_type">fast food</string>
+    <string name="restaurant_location">Alger, Bab Ezzouar</string>
+    <string name="menu_name">Crepe</string>
+    <string name="menu_price">300 DA</string>
+    <string name="menu_type">dessert</string>
+    <string name="page">Restaurants</string>
+    <string name="food_description">Crepes originated in France and are
+        a popular street food as well as restaurant menu item across
+        the country. Now, the dish is enjoyed across the world with
+        a wide range of fillings.
+        Whether you are planning a brunch, light dinner, or dessert,
+        crepes are an easy and versatile choice and they\'re endlessly
+        customizable.
+    </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

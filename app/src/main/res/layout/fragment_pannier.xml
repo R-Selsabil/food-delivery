@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackGround"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:context=".views.main_restaurants_activity.fragments.FragmentPannier">
+
+    <TextView
+        android:id="@+id/title_pannier"
+        style="@style/CustomFont2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="Pannier"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/table_layout_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:id="@+id/table_layout_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_pannier">
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_pannier">
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape_border_table_row_top_right_left"
+                android:gravity="center_horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/row1col1"
+                    android:padding="8dp"
+                    android:text="Subtotal"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/row1col2"
+                    android:padding="8dp"
+                    android:text="Row 1, Column 2"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape_border_table_row_left_right"
+                android:gravity="center_horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/row2col1"
+                    android:padding="8dp"
+                    android:text="Shipping cost"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/row2col2"
+                    android:padding="8dp"
+                    android:text="Row 2, Column 2"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:background="@drawable/shape_border_table_row_bottom_left_right"
+                android:gravity="center_horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/row3col1"
+                    android:padding="8dp"
+                    android:text="Total"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/row3col2"
+                    android:padding="8dp"
+                    android:text="Row 3, Column 2"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/add_layout_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/add_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="4dp"
+                android:paddingEnd="8dp"
+                android:text="add notes"
+                android:textColor="#FFFFFF"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/ic_add_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:src="@drawable/ic_edit" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_restaurant_type"
+            android:paddingStart="64dp"
+            android:paddingEnd="64dp"
+            android:text="Confirm"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+    </LinearLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPannier"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/shape_rounded_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_layout_frame" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
