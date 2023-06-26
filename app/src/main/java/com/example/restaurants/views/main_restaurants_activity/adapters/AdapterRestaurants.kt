@@ -15,6 +15,7 @@ import com.example.restaurants.databinding.LayoutRestaurantBinding
 import com.example.restaurants.utils.url
 import com.example.restaurants.views.main_restaurants_activity.RestaurantClickListener
 
+
 class AdapterRestaurants(private val context: Context, private val clickListener: RestaurantClickListener):
     RecyclerView.Adapter<AdapterRestaurants.MyViewHolder>(){
     var data = mutableListOf<Restaurant>()
@@ -40,9 +41,10 @@ class AdapterRestaurants(private val context: Context, private val clickListener
     }
     fun bind(holder: MyViewHolder, restaurant: Restaurant) {
         holder.binding.apply {
-            /*Glide.with(context)
-                .load(url + )
-                .into(restaurant.logo)*/
+            Glide.with(context)
+                .load("${url}images/restaurants/${restaurant.logo}")
+                .into(imageRestaurant)
+
             textName.text = restaurant.name
             //textAdresse.text = restaurant.address
 

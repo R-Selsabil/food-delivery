@@ -127,7 +127,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_input_layout"
+            android:id="@+id/password_input_layout_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -173,7 +173,7 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/avatar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_input_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/password_input_layout_text" />
 
         <TextView
             android:id="@+id/terms"

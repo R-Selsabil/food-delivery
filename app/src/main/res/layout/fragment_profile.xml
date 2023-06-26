@@ -7,6 +7,7 @@
     android:background="@color/colorBackGround"
     app:layout_constraintBottom_toBottomOf="parent"
     tools:context=".views.main_restaurants_activity.fragments.FragmentProfile">
+
     <TextView
         android:id="@+id/title_profile"
         style="@style/CustomFont2"
@@ -20,7 +21,8 @@
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/buttonLogOut"

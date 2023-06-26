@@ -6,12 +6,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Carts")
 data class CartItem(
     @PrimaryKey
-    val cartItemId: String,
-    val menuID : String,
+    val cartItemId: Int,
     var quantity: Int,
     val name: String,
-    val logo: Int,
+    val logo: String,
     val type: String,
     val price: String,
-    val restaurantId: String
+    val restaurantId: Int
 )

@@ -20,9 +20,7 @@ class FragmentRestaurants : Fragment() {
 
     lateinit var binding: FragmentRestaurantsBinding
     lateinit var restaurantModel: RestaurantViewModel
-    lateinit var progressBar: ProgressBar
     lateinit var clickListener : RestaurantClickListener
-    lateinit var adapter: ActivityMainRestaurantsBinding
 
 
     override fun onCreateView(

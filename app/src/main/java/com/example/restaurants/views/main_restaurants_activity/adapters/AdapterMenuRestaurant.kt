@@ -6,15 +6,23 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.restaurants.data.models.Menu
 import com.example.restaurants.R
+import com.example.restaurants.data.models.Restaurant
 import com.example.restaurants.databinding.LayoutRestaurantMenuBinding
+import com.example.restaurants.utils.url
 import com.example.restaurants.viewmodels.MenuViewModel
 
-class AdapterMenuRestaurant(val data: List<Menu>, val ctx: FragmentActivity) :
+class AdapterMenuRestaurant(val ctx: FragmentActivity) :
     RecyclerView.Adapter<AdapterMenuRestaurant.MyViewHolder>() {
     //private val clickListener: MyMenuClickListener
     lateinit var myModel: MenuViewModel
+    var data = mutableListOf<Menu>()
+    fun setMenu(menus : List<Menu>) {
+        this.data = menus.toMutableList()
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutRestaurantMenuBinding.inflate(
@@ -35,15 +43,17 @@ class AdapterMenuRestaurant(val data: List<Menu>, val ctx: FragmentActivity) :
             textMenuName.text = menu.name
             textMenuType.text = menu.category
             textMenuPrice.text = menu.price.toString()
-            //imageMenu.setImageResource(menu.logo)
+            Glide.with(ctx)
+                .load("${url}images/menus/${menu.picture}")
+                .into(imageMenu)
             //add the selected item to pannier
-            buttonAddToCard.setOnClickListener {
+            /*buttonAddToCard.setOnClickListener {
                 myModel.addToCart(menu,1)
-            }
+            }*/
         }
 
         holder.itemView.setOnClickListener {
-            myModel.itemDetail = Menu(1,menu.name,menu.picture,menu.price,menu.category,menu.description)
+            myModel.item = menu
             myModel.qttOfItem="0"
             it.findNavController().navigate(R.id.action_fragmentMenus_to_fragmentFoodDetails)
         }

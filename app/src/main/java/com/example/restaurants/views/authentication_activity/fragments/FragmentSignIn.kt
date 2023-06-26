@@ -45,6 +45,7 @@ class FragmentSignIn : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userModel = ViewModelProvider(requireActivity()).get(UserViewModel::class.java)
+        userModel.initViewModel(requireActivity())
 
 
         binding.textSignUp.setOnClickListener {
@@ -53,35 +54,11 @@ class FragmentSignIn : Fragment() {
         binding.buttonSignIn.setOnClickListener {
             email = binding.editTextTextEmailAddressSignin.text.toString()
             password = binding.passwordInputLayoutSignIn.text.toString()
-            signInUser()
+            userModel.signInUser(email, password)
             requireActivity().finish()
         }
     }
 
-    fun signInUser() {
-        val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
-            requireActivity().runOnUiThread {
-                Toast.makeText(requireActivity(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show()
-            }
-        }
 
-        CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = UserEndPoint.createEndpoint().getUserByEmailAndPassword(email, password)
-            withContext(Dispatchers.Main) {
-                if (response.isSuccessful && response.body() != null) {
-                    val user = response.body()
-                    user?.let {
-                        userModel.setUser(it) // Assuming you have a setUser method in UserViewModel
-                    }
-                } else {
-                    Toast.makeText(
-                        requireActivity(),
-                        "invalid email or password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
-    }
 }
 

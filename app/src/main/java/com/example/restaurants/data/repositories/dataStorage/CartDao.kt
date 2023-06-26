@@ -11,7 +11,10 @@ interface CartDao {
 
     // Get the restaurant's id of the current order
     @Query("SELECT * FROM Carts WHERE restaurantId = :restaurantId")
-    fun getRestaurantOrder(restaurantId: String): List<CartItem>
+    fun getRestaurantOrder(restaurantId: Int): List<CartItem>
+
+    @Query("SELECT restaurantId FROM Carts")
+    fun getRestaurantId() : Int
 
     // Insert a new Menu to the cart
     @Insert
@@ -26,6 +29,8 @@ interface CartDao {
     fun deleteMenu(cart: CartItem)
 
     // Empty cart
-    @Query("delete from Carts ")
+    @Query("DELETE FROM Carts")
     fun emptyCart()
+    @Query("SELECT * FROM Carts WHERE cartItemId = :itemId")
+    fun getCartItemById(itemId: Int): CartItem
 }

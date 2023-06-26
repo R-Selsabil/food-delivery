@@ -87,6 +87,7 @@ class sharedPreferences(private val context: Activity) {
 
     fun setUser(user: User)
     {
+        println("on user set")
         val pref = context.getSharedPreferences(dataFile, Context.MODE_PRIVATE)
         //pref.edit().clear().apply()
         val id = "user_"+System.currentTimeMillis().toString()
@@ -114,7 +115,6 @@ class sharedPreferences(private val context: Activity) {
         editor.putStringSet(id, userMapAsStringSet)
 
         editor.apply()
-
     }
     fun  setUser(email: String, password: String): String {
         var msg = ""
